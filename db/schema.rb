@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_18_114139) do
+ActiveRecord::Schema.define(version: 2022_07_18_113503) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2022_07_18_114139) do
   end
 
   create_table "cart_items", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "item_id"
-    t.integer "quantity"
+    t.integer "customer_id", null: false
+    t.integer "item_id", null: false
+    t.integer "quantity", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 2022_07_18_114139) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "first_name_kana"
-    t.string "last_name_kana"
-    t.string "zip_code"
-    t.string "address"
-    t.string "phone_number"
-    t.boolean "customer_status", default: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "zip_code", null: false
+    t.string "address", null: false
+    t.string "phone_number", null: false
+    t.boolean "customer_status", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
@@ -53,51 +53,51 @@ ActiveRecord::Schema.define(version: 2022_07_18_114139) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "genre_id"
-    t.string "name"
-    t.text "description"
-    t.integer "price"
+    t.integer "genre_id", null: false
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "price", null: false
     t.boolean "sale_status", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "ordered_items", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "item_id"
-    t.integer "quantity"
-    t.integer "production_status", default: 0
-    t.integer "tax_price"
+    t.integer "order_id", null: false
+    t.integer "item_id", null: false
+    t.integer "quantity", null: false
+    t.integer "production_status", default: 0, null: false
+    t.integer "tax_price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "items_total"
-    t.string "zip_code"
-    t.string "address"
-    t.string "name"
-    t.integer "delivery_money"
+    t.integer "customer_id", null: false
+    t.integer "items_total", null: false
+    t.integer "order_status", default: 0, null: false
+    t.integer "payment_method", default: 0, null: false
+    t.string "zip_code", null: false
+    t.string "address", null: false
+    t.string "name", null: false
+    t.integer "delivery_money", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "order_status", default: 0
-    t.integer "payment_method", default: 0
   end
 
   create_table "shipping_addresses", force: :cascade do |t|
-    t.integer "customer_id"
-    t.string "address"
+    t.integer "customer_id", null: false
+    t.string "address", null: false
+    t.string "zip_code", null: false
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "zip_code"
-    t.string "name"
   end
 
 end
