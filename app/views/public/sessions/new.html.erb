@@ -1,19 +1,28 @@
-<h3>ログイン</h3>
-<p>会員の方はこちらからログイン</p>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="container mt-5 offset-md-2">
+  <h4 class="row"><span style="background-color:beige">　ログイン　</span></h4>
+  <h5 class="mt-5">　<span style="background-color:beige">　会員の方はこちらからログイン　</span></h5>
+</div>
 
-  <div class="field">
-    <%= f.label :password, "パスワード" %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 field">
+          <div class="form-group ">
+            <%= f.label :email, "メールアドレス", class: 'text-left' %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: 'float-right', size: "50" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, "パスワード", class: 'text-left' %>
+            <%= f.password_field :password, autocomplete: "current-password", class: 'float-right', size: "50" %>
+          </div>
+          <%= f.submit "ログイン",  class: 'btn btn-primary float-right', style: 'width:130px' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<div class="container mt-5 offset-md-2">
+  <h5 class="mt-5 ">　<span style="background-color:beige">　会員登録がお済でない方　</span></h5>
+  <%= render "public/shared/links" %>
+</div>
 
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-<% end %>
-<p>会員登録がお済でない方</p>
-<%= render "public/shared/links" %>
+
