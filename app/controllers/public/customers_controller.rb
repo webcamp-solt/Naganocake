@@ -14,9 +14,14 @@ class Public::CustomersController < ApplicationController
   end
 
   def out_check
+    @customer = Customer.find(current_customer.id)
   end
 
   def out
+    @customer = Customer.find(current_customer.id)
+    @customer.update(customer_params)
+    reset_session
+    redirect_to root_path
   end
 
   private
