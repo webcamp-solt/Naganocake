@@ -15,13 +15,15 @@
             <%= f.label :password, "パスワード", class: 'text-left' %>
             <%= f.password_field :password, autocomplete: "current-password", class: 'float-right', size: "50" %>
           </div>
-          <%= f.submit "ログイン",  class: 'btn btn-primary float-right', style: 'width:130px' %>
+          <div class="form-group text-center">
+            　　<%= f.submit "ログイン",  class: 'btn btn-primary', style: 'width:130px' %>
+          </div>
         </div>
       </div>
     </div>
   <% end %>
-<div class="container mt-5 offset-md-2">
-  <h5 class="mt-5 ">　<span style="background-color:beige">　会員登録がお済でない方　</span></h5>
+<div class="container mt-3 offset-md-2">
+  <h5>　<span style="background-color:beige">　会員登録がお済でない方　</span></h5>
   <%= render "public/shared/links" %>
 </div>
 
