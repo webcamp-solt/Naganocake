@@ -1,0 +1,11 @@
+<h4>本当に退会しますか？</h4>
+<p>退会すると、会員登録情報や<br />
+これまでの購入履歴が閲覧できなくなります。<br />
+退会する場合は、「退会する」をクリックしてください。</p>
+
+<%=link_to "退会しない", customers_my_page_path, style: 'width:150px', class: 'btn btn-primary' %>
+
+<%= form_with model: @customer, url: customers_out_path, method: :patch do |f| %>
+  <%= f.hidden_field :customer_status, :value => "true" %>
+  <%= f.submit "退会する", style: 'width:150px', class: 'btn btn-danger' %>
+<% end %>
