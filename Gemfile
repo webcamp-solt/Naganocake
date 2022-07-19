@@ -59,3 +59,4 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'annotate'
 gem 'kaminari'
+gem 'enum_help'
