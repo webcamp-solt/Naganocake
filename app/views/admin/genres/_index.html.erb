@@ -6,9 +6,9 @@
   </thead>
   <tbody>
     <% genres.each do |genre| %>
-    <tr id = "genre_<%= genre.id %>">
+    <tr>
       <td>
-        <%= link_to genre, class: "genre_#{genre.id}" %>
+        <%= link_to genre.name %>
       </td>
     </tr>
     <% end %>
