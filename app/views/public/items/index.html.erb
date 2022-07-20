@@ -5,23 +5,24 @@
       <%= render 'admin/genres/index', genres: @genres %>
     </div>
     
-    <div class='col-md-8 offset-md-1'>
-      <h1>商品一覧</h1>
-      <%= items.each do |item| %>
-        <tr>
-          <td>
-            <% if list.image.attached? %>
-              <%= image_tag item.image, size: '200x200' %>
-            <% else %>
-              <%= image_tag 'no_image', size: "200x200" %>
-            <% end %>
-          </td>
-          <td><%= item.name %></td>
-          <td>¥<%= item.price %></td>
-         </tr>
-      <% end %>
-    </div>
-    
+    <table class='table table-hover table-inverse'>
+      <div class='col-md-8 offset-md-1'>
+        <h1>商品一覧</h1>
+        <%= items.each do |item| %>
+          <tr>
+            <td>
+              <% if list.image.attached? %>
+                <%= image_tag item.image, size: '200x200' %>
+              <% else %>
+                <%= image_tag 'no_image', size: "200x200" %>
+              <% end %>
+            </td>
+            <td><%= item.name %></td>
+            <td>¥<%= item.price %></td>
+           </tr>
+        <% end %>
+      </div>
+    </table>
 
   </div>
 </div>
