@@ -20,10 +20,10 @@
               <td><%= link_to customer.full_name, admin_customer_path(customer.id)  %></td>
               <td><%= customer.email %></td>
               <td>
-                <% if customer.customer_status = false %>
-                  <b class="text-black-50">退会</b>
-                <% else %>
+                <% if customer.customer_status == false %>
                   <b class="text-success">有効</b>
+                <% else %>
+                  <b class="text-black-50">退会</b>
                 <% end %>
               </td>
             </tr>
