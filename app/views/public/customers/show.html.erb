@@ -4,7 +4,7 @@
 <div class="container mt-5 offset-md-1">
   <div class="row">
     <h4 class="col-2">登録情報</h4>
-    <%= link_to "編集する", customers_information_edit_path, class: "col-2 btn btn-success", style: "width:140px" %>
+    <%= link_to "編集する", customers_information_edit_path, type: "button", class: "col-2 btn btn-success", style: "width:140px" %>
   </div>
 </div>
 <div class="container mt-4 offset-md-1">
@@ -12,8 +12,8 @@
     <table class='table table-bordered'>
       <tbody>
         <tr>
-          <td class="col-1 ">氏名</td>
-          <td class="col-3"><%= @customer.full_name %></td>
+          <td>氏名</td>
+          <td><%= @customer.full_name %></td>
         </tr>
         <tr>
           <td>カナ</td>
