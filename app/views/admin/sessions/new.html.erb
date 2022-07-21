@@ -1,24 +1,27 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
-      <h2>管理者ログイン</h2>
-      <%= form_with model: @admin, url: admin_admin_homes_path do |f| %>
-        <div class="field">
-          <%= f.label :"メールアドレス" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h4 class="col-3 bg-light mb-5 text-center">管理者ログイン</h4>
+
+      <%= form_with model: @admin, url: admin_admin_path do |f| %>
+        <div class="row text-center offset-1 mb-3">
+          <span class="col-3"><%= f.label :"メールアドレス" %></span>
+          <span class="col-5"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control border-dark" %></span>
         </div>
 
-        <div class="field">
-          <%= f.label :"パスワード" %>
-          <%= f.password_field :password, autocomplete: "current-password" %>
+        <div class="row text-center offset-1 mb-5">
+          <span class="col-3"><%= f.label :"パスワード" %></span>
+          <span class="col-5"><%= f.password_field :password, autocomplete: "current-password", class: "form-control border-dark" %></span>
         </div>
 
-        <div class="actions">
-          <%= f.submit "ログイン", class: 'btn btn-sm btn-primary' %>
+        <div class="row offset-1">
+          <span class="col-3"></span>
+          <span class="col-5"><%= f.submit "ログイン", class: 'btn btn-sm btn-primary col-4' %></span>
         </div>
       <% end %>
-
+        </div>
       <%= render "admin/shared/links" %>
-    </div>
+      </div>
+      </div>
   </div>
 </div>
