@@ -13,7 +13,7 @@
               <%= link_to item_path(item) do %>
                 <%= image_tag item.get_image, size: "200x200" %>
                 <p class="figure-caption"><%= item.name %></p>
-                <p class="figure-caption">¥<%= (item.price* 1.1).floor %></p>
+                <p class="figure-caption">¥<%= item.with_tax_price %></p>
               <% end %>
             </td>
           <% end %>

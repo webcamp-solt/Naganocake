@@ -15,7 +15,7 @@
             <td>
               <p class="h3 font-weight-bold"><%= @item.name %></p>
               <p><%= @item.description %></p>
-              <p><span class="h3 font-weight-bold">¥<%= (@item.price* 1.1).floor %></span>(税込)</p>
+              <p><span class="h3 font-weight-bold">¥<%= @item.with_tax_price %></span>(税込)</p>
 
               <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
                 <%= f.hidden_field :item_id, :value => @item.id %>
