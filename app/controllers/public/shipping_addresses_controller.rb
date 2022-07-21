@@ -4,14 +4,11 @@ class Public::ShippingAddressesController < ApplicationController
     @shipping_address = ShippingAddress.new
   end
 
-  def edit
   def create
     @shipping_address = ShippingAddress.new(shipping_address_params)
     @shipping_address.save
     redirect_to shipping_addresses_path
   end
-
-  def create
 
   def edit
     @shipping_address = ShippingAddress.find(params[:id])
@@ -20,7 +17,7 @@ class Public::ShippingAddressesController < ApplicationController
 
   def update
     @shipping_address = ShippingAddress.find(params[:id])
-     if @book.update(shipping_address_params)
+    if @book.update(shipping_address_params)
       redirect_to shipping_addresses_path, notice: "You have updated user successfully."
     else
       render :edit
@@ -28,8 +25,11 @@ class Public::ShippingAddressesController < ApplicationController
   end
 
   def destroy
+    @shipping_address = ShippingAddress.find(params[:id])
+    @shipping_address.delete
+    redirect_to shipping_addresses_path
   end
-end
+
 
   private
 

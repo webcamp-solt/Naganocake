@@ -26,22 +26,22 @@
   </div>
   <div class="row">
     <div class="col-9">
-      <table class="table table-bordered border-dark">
+      <table class="table table-bordered">
         <thead class="bg-light">
           <tr>
-            <th class="col-2 py-3 px-1">郵便番号</th>
-            <th class="col-5 py-3 px-1">住所</th>
-            <th class="col-2 py-3 px-1">宛名</th>
-            <th colspan='3'></th>
+            <th class="col-2 py-3 px-1 border-dark">郵便番号</th>
+            <th class="col-5 py-3 px-1 border-dark">住所</th>
+            <th class="col-2 py-3 px-1 border-dark">宛名</th>
+            <th class="col-3 border-dark"></th>
           </tr>
         </thead>
         <tbody>
           <% @shipping_addresses.each do |shipping_address| %>
             <tr>
-              <td class="py-3 px-1"><%= shipping_address.zip_code %></td>
-              <td class="py-3 px-1"><%= shipping_address.address %></td>
-              <td class="py-3 px-1"><%= shipping_address.name %></td>
-              <td class="py-3 text-center">
+              <td class="py-3 px-1 border-dark"><%= shipping_address.zip_code %></td>
+              <td class="py-3 px-1 border-dark"><%= shipping_address.address %></td>
+              <td class="py-3 px-1 border-dark"><%= shipping_address.name %></td>
+              <td class="py-3 text-center border-dark">
                <%= link_to '編集する', edit_shipping_address_path(shipping_address), class: "btn btn-sm btn-success " %>
                <%= link_to '削除する', shipping_address_path(shipping_address), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger " %>
               </td>
