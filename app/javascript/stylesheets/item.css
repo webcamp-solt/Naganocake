@@ -1,0 +1,40 @@
+
+
+.main-visual {
+  height: 300px;
+  background-image: url("image/home.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.main-visual-content{
+  width: 60%; /* 横幅40% */
+  height: 200px; /* 親の高さに揃える */
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center; /* 文字を中央揃えにする */
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.about_image {
+  width: 700px;
+  height: 400px;
+  justify-content: center;
+  background-image: url("image/top.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.items_all{
+   display: flex;
+  flex-wrap: wrap;
+}
+
+.figure-caption{
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

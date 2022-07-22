@@ -1,30 +1,26 @@
 <div class='container px-5 px-sm-0'>
-  <div class='row'>
+  <div class='row py-5'>
 
-    <div class='col-md-3'>
+    <div class='col-md-2'>
       <%= render 'admin/genres/index', genres: @genres %>
     </div>
 
-    <div class="col-md-8">
-      <table class='table table-inverse'>
-        <div class='offset-md-1'>
-          <tr>
-            <td>
-              <%= image_tag @item.get_image, size: "200x200" %>
-            </td>
-            <td>
-              <p class="h3 font-weight-bold"><%= @item.name %></p>
-              <p><%= @item.description %></p>
-              <p><span class="h3 font-weight-bold">¥<%= @item.with_tax_price %></span>(税込)</p>
-
-              <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
-                <%= f.hidden_field :item_id, :value => @item.id %>
-                <%= f.select :quantity, *[1..10], include_blank: "個数選択" %>
-                <%= f.submit "カートに入れる", class: "col-md-4 btn btn-success" %>
-              <% end %>
-            </td>
-          </tr>
-        </div>
-      </table>
+    <div class="col-md-4">
+      <%= image_tag @item.get_image, size: "340x220" %>
     </div>
+    <div class="col-md-6">
+      <p class="h3 font-weight-bold"><%= @item.name %></p>
+      <p><%= @item.description %></p>
+      <p class="col pt-5">
+        <span class="h3 font-weight-bold">¥<%= @item.with_tax_price %></span>(税込)
+      </p>
+      <div class="row justify-content-around">
+        <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
+          <%= f.hidden_field :item_id, :value => @item.id %>
+          <%= f.select :quantity, *[1..10], include_blank: "個数選択" %>
+          <%= f.submit "カートに入れる", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
