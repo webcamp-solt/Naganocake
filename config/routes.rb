@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
     resources :items, except: [:destroy]
 
-    get '/' => 'homes#top', as: "login"
+
+
+    get '/' => 'homes#top', as: 'login'
+
 
   end
 
