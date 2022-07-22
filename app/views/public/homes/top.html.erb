@@ -1,23 +1,46 @@
 <div class='container px-5 px-sm-0'>
-  <div class='row'>
-    <div class='col-md-3'>
+  <div class='row py-5'>
+    <div class='col-md-2'>
       <%= render 'admin/genres/index', genres: @genres %>
     </div>
 
     <div class='col-md-8 offset-md-1 '>
-      <p>
-        ようこそ、ながのCAKEへ！</br>
-        このサイトは、ケーキ販売のECサイトになります。</br>
-        会員でない方も商品の閲覧はできますが、</br>
-        購入には会員登録が必要になります。</br>
-      </p>
+      <div class="main-visual row">
+        <div class="main-visual-content m-auto">
+          <div class="my-5 font-weight-bold">
+          ようこそ、ながのCAKEへ！</br>
+          このサイトは、ケーキ販売のECサイトになります。</br>
+          会員でない方も商品の閲覧はできますが、</br>
+          購入には会員登録が必要になります。</br>
+          </div>
+        </div>
+      </div>
 
-      <h1>新着商品</h1>
 
-      <div>
-      <%= link_to "全ての商品を見る>", items_path %>
+       <div class="row py-3">
+        <h1>新着商品</h1>
+
+        <table class="table table-borderless">
+        <tr>
+          <% @items.each do |item| %>
+            <td>
+              <%= link_to item_path(item) do %>
+                <%= image_tag item.get_image, size: "200x130" %>
+                <p class="figure-caption"><%= item.name %></p>
+                <p class="figure-caption">¥<%= item.with_tax_price %></p>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+
+        <div class="col text-right">
+          <%= link_to "全ての商品を見る>", items_path %>
+        </div>
       </div>
     </div>
+
+
 
   </div>
 </div>
