@@ -8,7 +8,7 @@
     <% genres.each do |genre| %>
     <tr class="table-borderless">
       <td>
-        <%= link_to genre.name %>
+        <%= link_to genre.name, admin_genre_path(genre) %>
       </td>
     </tr>
     <% end %>
