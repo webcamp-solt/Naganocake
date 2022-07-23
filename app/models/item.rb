@@ -12,11 +12,11 @@ class Item < ApplicationRecord
       'no_image.jpeg'
     end
   end
-  
+
   def with_tax_price
     (price * 1.1).floor
   end
-  
+
   def sale_status_method
     if sale_status == true
       '販売中'
@@ -24,6 +24,6 @@ class Item < ApplicationRecord
       '販売停止中'
     end
   end
-  
+
 end
 
