@@ -5,9 +5,9 @@ class Order < ApplicationRecord
   enum payment_method: { credit_card: 0, transfer: 1 }
   enum order_status: { waiting_for_deposit: 0, payment_confirmation: 1, in_production: 2, ready_to_ship: 3, sent: 4 }
 
-  def ordered_itemes_total
+  def ordered_itemes_total(order)
     array = []
-    OrderedItem.all.each do |ordered_item|
+    order.ordered_items.each do |ordered_item|
       array << ordered_item.quantity
     end
     array.sum
