@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
 
     patch 'ordered_items/:id' => 'ordered_items#update'
-    get 'orders/:id' => 'orders#show', as: 'orders'
+    get 'orders/show'
     patch 'orders/:id' => 'orders#update'
 
     resources :customers, only: [:index, :show, :edit, :update]
@@ -12,10 +12,7 @@ Rails.application.routes.draw do
 
     resources :items, except: [:destroy]
 
-
-
-    get '/' => 'homes#top', as: 'login'
-
+    get '/' => 'homes#top' , as: "login"
 
   end
 
