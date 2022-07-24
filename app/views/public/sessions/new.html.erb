@@ -1,30 +1,42 @@
-<div class="container mt-5 offset-md-2">
-  <h4 class="row"><span style="background-color:beige">　ログイン　</span></h4>
-  <h5 class="row mt-5">　<span style="background-color:beige">　会員の方はこちらからログイン　</span></h5>
-</div>
-
+<div class="container mt-5 border rounded px-5 py-5 shadow">
+  <div class="row">
+    <div class="col-xl-3 bg-light mb-5 text-center">
+      <h4>ログイン</h4>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-lg-5 bg-light mb-5 text-center ml-lg-5">
+      <h5>会員の方はこちらからログイン</h5>
+    </div>
+  </div>
+  <%= render "public/shared/error_messages", resource: resource %>
   <%= form_with model: @customer, url: customer_session_path do |f| %>
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-md-8 offset-md-2 field">
-          <div class="form-group">
-            <%= f.label :email, "メールアドレス", class: 'text-left' %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: 'float-right', size: "50" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :password, "パスワード", class: 'text-left' %>
-            <%= f.password_field :password, autocomplete: "current-password", class: 'float-right', size: "50" %>
-          </div>
-          <div class="form-group text-center">
-            　　<%= f.submit "ログイン",  class: 'btn btn-primary', style: 'width:130px' %>
-          </div>
-        </div>
+    <div class="form-group">
+      <div class="row text-center">
+        <div class="col-lg-3"><%= f.label :email, "メールアドレス", class: 'text-left' %></div>
+        <div class="col-lg-5"><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: "form-control border-dark" %></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row text-center">
+        <div class="col-lg-3"><%= f.label :password, "パスワード", class: 'text-left' %></div>
+        <div class="col-lg-5"><%= f.password_field :password, autocomplete: "current-password", class: "form-control border-dark" %></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row text-center">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-5 "><%= f.submit "ログイン",  class: 'btn btn-primary text-center mt-3', style: 'width:160px' %></div>
       </div>
     </div>
   <% end %>
-<div class="container mt-3 offset-md-2">
-  <h5>　<span style="background-color:beige">　会員登録がお済でない方　</span></h5>
-  <%= render "public/shared/links" %>
 </div>
 
-
+<div class="container mt-5 border rounded px-5 py-5 shadow">
+  <div class="row">
+    <div class="col-lg-4 bg-light text-center">
+      <h4>会員登録がお済でない方</h4>
+    </div>
+    <%= render "public/shared/links" %>
+  </div>
+</div>
