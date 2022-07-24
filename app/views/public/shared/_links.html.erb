@@ -6,7 +6,6 @@
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <div class="container mt-4 offset-md-2">
-    <div class="col-lg-3 text-center"><%= link_to "こちら", new_registration_path(resource_name), class: "btn btn-success", style: 'width:160px' %></div>
-    <span class="col-lg-5 align-middle">　から新規登録を行ってください。</span>
+    <%= link_to "こちら", new_registration_path(resource_name), class: "btn btn-success", style: 'width:160px' %>　から新規登録を行ってください。
   </div>
 <% end %>
