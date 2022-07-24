@@ -11,10 +11,9 @@ class Customer < ApplicationRecord
   validates :zip_code,  length: { minimum: 7, maximum: 7}, format: { with: /^[0-9]+$/, multiline: true}
   validates :phone_number, format: { with: /^[0-9]+$/, multiline: true}
 
-  KATAKANA_REGEXP = /\A[p{katakana}\u{30fc}]+\z/
+  KATAKANA_REGEXP = /\A[ァ-ヶー－]+\z/
   validates :first_name_kana, format: { with: KATAKANA_REGEXP, multiline: true }
   validates :last_name_kana, format: { with: KATAKANA_REGEXP, multiline: true }
-
   def full_name
     self.last_name + "　" + self.first_name
   end
