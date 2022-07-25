@@ -22,7 +22,7 @@ class Public::ShippingAddressesController < ApplicationController
 
   def update
     @shipping_address = ShippingAddress.find(params[:id])
-    if @book.update(shipping_address_params)
+    if @shipping_address.update(shipping_address_params)
       redirect_to shipping_addresses_path, notice: "You have updated user successfully."
     else
       render :edit
