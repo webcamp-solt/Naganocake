@@ -23,6 +23,12 @@ class Admin::GenresController < ApplicationController
      end
   end
 
+  def show
+    @genres = Genre.all
+    @genre = Genre.find(params[:id])
+    @all_items = @genre.items
+  end
+
   private
 
   def genre_params
