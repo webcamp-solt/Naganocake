@@ -1,8 +1,8 @@
 <div class="container">
-<span class="p-2 bg-secondary">
-  商品編集
-</span>
-
+  <span class="p-2 bg-secondary">
+    商品編集
+  </span>
+  <%= render 'layouts/errors', obj: @item %>
   <div class="row g-3 d-flex justify-content-center">
     <%= form_with class: "col-md-8", model: @item, url: admin_item_path, method: :patch do |f| %>
 

@@ -1,7 +1,7 @@
 <div class="container px-5 px-sm-0 mt-5 offset-md-2">
   <h4 class="row"><span style="background-color:beige">　<%= @customer.full_name %>さんの会員情報編集  　</span></h4>
 </div>
-
+<%= render 'layouts/errors', obj: @customer %>
 <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>
 <div class="container mt-5 form-group">
   <div class="row">
