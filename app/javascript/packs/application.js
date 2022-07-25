@@ -15,7 +15,7 @@ import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 // import '../stylesheets/order.css'
 
-import "../stylesheets/item.css"
+// import "../stylesheets/item.css"
 import "../stylesheets/footer.css"
 
 Rails.start()

@@ -53,7 +53,7 @@ class Public::OrdersController < ApplicationController
     end
 
     current_customer.cart_items.destroy_all
-    redirect_to complete_orders_path
+    redirect_to complete_orders_path, notice: "You have updated user successfully."
   end
 
   def index
