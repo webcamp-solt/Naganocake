@@ -1,4 +1,6 @@
 class Public::ShippingAddressesController < ApplicationController
+  before_action :authenticate_customer!
+
   def index
     @customer = Customer.find(current_customer.id)
     @shipping_addresses = @customer.shipping_addresses.all
