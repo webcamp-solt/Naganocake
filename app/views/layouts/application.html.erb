@@ -17,8 +17,12 @@
       </haeder>
 
 
-      <%= yield %>
+      <main>
+        <p id="notice"><%= notice %></p>
+        <%= yield %>
+      </main>
 
+      <%= yield %>
 
       <footer>
         <%= render 'layouts/footer' %>
