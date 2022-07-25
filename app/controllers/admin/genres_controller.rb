@@ -7,7 +7,7 @@ class Admin::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to admin_genres_path "You have updated user successfully."
+      redirect_to admin_genres_path, notice: "You have updated user successfully."
     else
       @genres = Genre.page(params[:page])
       render :index
