@@ -1,11 +1,5 @@
 
 
-.main-visual {
-  height: 300px;
-  background-image: url("image/home.jpeg");
-  background-size: cover;
-  background-position: center;
-}
 
 .main-visual-content{
   width: 60%; /* 横幅40% */
