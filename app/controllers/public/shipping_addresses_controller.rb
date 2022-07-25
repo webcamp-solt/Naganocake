@@ -1,6 +1,7 @@
 class Public::ShippingAddressesController < ApplicationController
   def index
-    @shipping_addresses = ShippingAddress.all
+    @customer = Customer.find(current_customer.id)
+    @shipping_addresses = @customer.shipping_addresses.all
     @shipping_address = ShippingAddress.new
   end
 

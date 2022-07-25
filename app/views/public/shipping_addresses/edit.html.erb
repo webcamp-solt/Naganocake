@@ -3,7 +3,7 @@
     <div class="col-12">
       <h5 class="col-2 bg-light mb-5 text-center py-0 ml-4 ">配送先登録/一覧</h5>
       <%= render 'layouts/errors', obj: @shipping_address %>
-      <%= form_with model: @shipping_address, url: shipping_addresses_path, method: :post do |f| %>
+      <%= form_with model: @shipping_address, url: shipping_address_path, method: :pacth do |f| %>
         <div class="row mb-3">
           <span class="col-3"><%= f.label :"郵便番号(ハイフンなし)" %></span>
           <span class="col-3"><%= f.text_field :zip_code, class: 'form-control shipping_address_zip_code border-dark' %></span>
