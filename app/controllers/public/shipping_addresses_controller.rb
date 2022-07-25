@@ -1,13 +1,18 @@
 class Public::ShippingAddressesController < ApplicationController
   def index
-    @shipping_addresses = ShippingAddress.all
+    @customer = Customer.find(current_customer.id)
+    @shipping_addresses = @customer.shipping_addresses.all
     @shipping_address = ShippingAddress.new
   end
 
   def create
     @shipping_address = ShippingAddress.new(shipping_address_params)
-    @shipping_address.save
-    redirect_to shipping_addresses_path
+    if @shipping_address.save
+      redirect_to shipping_addresses_path, notice: "You have updated user successfully."
+    else
+      @shipping_addresses = ShippingAddress.all
+      render :index
+    end
   end
 
   def edit
@@ -27,7 +32,7 @@ class Public::ShippingAddressesController < ApplicationController
   def destroy
     @shipping_address = ShippingAddress.find(params[:id])
     @shipping_address.delete
-    redirect_to shipping_addresses_path
+    redirect_to shipping_addresses_path, notice: "You have updated user successfully."
   end
 
 
