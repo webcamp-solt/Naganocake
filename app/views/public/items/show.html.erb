@@ -18,6 +18,7 @@
         <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
           <%= f.hidden_field :item_id, :value => @item.id %>
           <% if customer_signed_in? %>
+            <p id="alert" class="text-danger font-weight-bold"><%= alert %></p>
             <%= f.select :quantity, *[1..10], include_blank: "個数選択" %>
             <% if @item.sale_status %>
               <%= f.submit "カートに入れる", class: "btn btn-success" %>
