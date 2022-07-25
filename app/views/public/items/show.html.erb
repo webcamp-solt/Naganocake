@@ -17,11 +17,18 @@
       <div class="row justify-content-around">
         <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
           <%= f.hidden_field :item_id, :value => @item.id %>
-          <%= f.select :quantity, *[1..10], include_blank: "個数選択" %>
-          <% if @item.sale_status %>
-            <%= f.submit "カートに入れる", class: "btn btn-success" %>
+          <% if customer_signed_in? %>
+            <%= f.select :quantity, *[1..10], include_blank: "個数選択" %>
+            <% if @item.sale_status %>
+              <%= f.submit "カートに入れる", class: "btn btn-success" %>
+            <% else %>
+              <p class="btn btn-danger">売　切</p>
+            <% end %>
           <% else %>
-            <p class="btn btn-danger">売　切</p>
+            <p class="text-center">
+              ご注文は会員登録後になります<br>
+              会員登録は<%= link_to "こちら", new_customer_registration_path %>
+            </p>
           <% end %>
         <% end %>
       </div>
