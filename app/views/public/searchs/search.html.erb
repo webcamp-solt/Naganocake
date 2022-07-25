@@ -1,0 +1,31 @@
+<%# if @range == '1' %>
+  <!--<h1>商品名が<%#= @content %>でジャンルが<%#= @genre.name %>の商品一覧</h1>-->
+  <%# @items_s.each do |item| %>
+    <%#= item.name %>
+  <%# end %>
+<%# else %>
+  <!--<h1>値段が<%#= @content %>円以下でジャンルが<%#= @genre.name %>商品一覧</h1>-->
+  <%# @items_s.each do |item| %>
+    <%# if item.with_tax_price <= @content.to_i %>
+      <%#= item.name %>
+    <%# end %>
+  <%# end %>
+<%# end %>
+<div class="container">
+  <div class="text-center">
+    <h1>"<%= @content %>"での検索結果</h1>
+  </div>
+  <table class="table table-borderless">
+    <tr>
+      <% @items.each do |item| %>
+        <td>
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.get_image, size: "200x130" %>
+            <p class="figure-caption"><%= item.name %></p>
+            <p class="figure-caption">¥<%= item.with_tax_price %></p>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>
