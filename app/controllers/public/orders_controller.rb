@@ -1,6 +1,9 @@
 class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
+    unless current_customer.cart_items.present?
+      redirect_to root_path, notice: "予期せぬエラーが発生しました"
+    end
   end
 
   def confirm
@@ -61,7 +64,12 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @params = params[:check]
+    if @params
+      @order = Order.find(params[:id])
+    else
+      redirect_to root_path, notice: "予期せぬエラーが発生しました"
+    end
   end
 
   private
