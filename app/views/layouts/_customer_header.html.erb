@@ -6,45 +6,69 @@
 
 
           <li class="mx-1">
-            <%= link_to customers_my_page_path,class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-user fa-2x" style="color: black"></i>
-            <% end %>
+            <div class="mouse">
+              <%= link_to customers_my_page_path,class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-user fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word">My-Page</span>
+            </div>
           </li>
           <li class="mx-1">
-            <%=  link_to items_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-cheese fa-2x" style="color: black"></i>
-            <% end %>
+            <div class="mouse">
+              <%=  link_to items_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-cheese fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-1">Item-List</span>
+            </div>
           </li>
           <li class="mx-1">
-            <%=  link_to cart_items_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-cart-shopping fa-2x" style="color: black"></i>
-            <% end %>
+            <div class="mouse">
+              <%=  link_to cart_items_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-cart-shopping fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-2">Cart</span>
+            </div>
           </li>
           <li class="ml-1">
-            <%= link_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-right-from-bracket fa-2x" style="color: black"></i>
-            <% end %>
+            <div class="mouse">
+              <%= link_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-right-from-bracket fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word">Log-Out</span>
+            </div>
           </li>
         <% else %>
-          <li class="mx-1">
-            <%= link_to about_path,class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-store fa-2x" style="color: black"></i>
-            <% end %>
+          <li class="mx-2">
+            <div class="mouse">
+              <%= link_to about_path,class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-store fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-1">About</span>
+            </div>
           </li>
-          <li class="mx-1">
-            <%= link_to items_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-cheese fa-2x" style="color: black"></i>
-            <% end %>
+          <li class="mx-2">
+            <div class="mouse">
+              <%= link_to items_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-cheese fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-1">Item-List</span>
+            </div>
           </li>
-          <li class="mx-1">
-            <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-user-plus fa-2x" style="color: black"></i>
-            <% end %>
+          <li class="mx-2">
+            <div class="mouse">
+              <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-user-plus fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-1">Sign-Up</span>
+            </div>
           </li>
-          <li class="ml-1">
-            <%= link_to new_customer_session_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-arrow-right-to-bracket fa-2x" style="color: black"></i>
-            <% end %>
+          <li class="ml-2">
+            <div class="mouse">
+              <%= link_to new_customer_session_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-arrow-right-to-bracket fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-1">Log-In</span>
+            </div>
           </li>
         <% end %>
         </ul>
