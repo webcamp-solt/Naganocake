@@ -29,7 +29,7 @@
                 <% if cart_item.quantity < 10 %>
                   <%= f.select :quantity, *[1..10], class: "inline-block", include_blank: cart_item.quantity %>
                 <% else %>
-                  <%= f.text_field :quantity, class: "form-control-sm", include_blank: cart_item.quantity %>
+                  <%= f.text_field :quantity, class: "form-control-sm", include_blank: cart_item.quantity, type: "number" %>
                 <% end %>
                 <%= f.hidden_field :item_id, :value => cart_item.item.id %>
                 <%= f.submit '変更', class: "btn btn-success btn-sm" %>

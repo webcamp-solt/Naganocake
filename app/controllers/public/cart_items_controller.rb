@@ -8,8 +8,14 @@ class Public::CartItemsController < ApplicationController
 
   def update
     @cart_item = CartItem.find(params[:id])
-    @cart_item.update(cart_item_params)
-    redirect_to cart_items_path, notice: "数量の変更を保存しました"
+    if @cart_item.update(cart_item_params)
+      redirect_to cart_items_path, notice: "数量の変更を保存しました"
+    else
+      redirect_to request.referer, alert: "正しい数字を入力してください"
+    end
+    if @cart_item.quantity == 0
+      @cart_item.delete
+    end
   end
 
   def destroy
@@ -29,17 +35,18 @@ class Public::CartItemsController < ApplicationController
     @cart_items = current_customer.cart_items.all
     @cart_items.each do |cart_item|
       if @cart_item.item_id == cart_item.item_id
-        if @cart_item.quantity != nil
+        if @cart_item.quantity.present?
           cart_item.update(quantity: @cart_item.quantity + cart_item.quantity)
           @cart_item.delete
         end
       end
     end
-    if @cart_item.quantity != nil
+    if @cart_item.quantity.present?
       @cart_item.save
       redirect_to cart_items_path
     else
-      redirect_to item_path(@cart_item.item), alert: "※商品の個数を選択してください"
+       flash[:yusuke] = "※商品の個数を選択してください"
+      redirect_to item_path(@cart_item.item)
     end
   end
 
