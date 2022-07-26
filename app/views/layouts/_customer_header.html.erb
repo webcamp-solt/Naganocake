@@ -7,43 +7,43 @@
 
           <li class="mx-1">
             <%= link_to customers_my_page_path,class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-user fa-lg" style="color: black"></i>
+              <i class="fa-solid fa-user fa-2x" style="color: black"></i>
             <% end %>
           </li>
           <li class="mx-1">
             <%=  link_to items_path, class: 'nav-link text-light' do %>
-             <i class="fa-solid fa-cheese fa-lg" style="color: black"></i>
+             <i class="fa-solid fa-cheese fa-2x" style="color: black"></i>
             <% end %>
           </li>
           <li class="mx-1">
             <%=  link_to cart_items_path, class: 'nav-link text-light' do %>
-             <i class="fa-solid fa-cart-shopping fa-lg" style="color: black"></i>
+             <i class="fa-solid fa-cart-shopping fa-2x" style="color: black"></i>
             <% end %>
           </li>
           <li class="ml-1">
             <%= link_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-right-from-bracket fa-lg" style="color: black"></i>
+              <i class="fa-solid fa-right-from-bracket fa-2x" style="color: black"></i>
             <% end %>
           </li>
         <% else %>
           <li class="mx-1">
             <%= link_to about_path,class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-store fa-lg" style="color: black"></i>
+              <i class="fa-solid fa-store fa-2x" style="color: black"></i>
             <% end %>
           </li>
           <li class="mx-1">
             <%= link_to items_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-cheese fa-lg" style="color: black"></i>
+              <i class="fa-solid fa-cheese fa-2x" style="color: black"></i>
             <% end %>
           </li>
           <li class="mx-1">
             <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-user-plus fa-lg" style="color: black"></i>
+              <i class="fa-solid fa-user-plus fa-2x" style="color: black"></i>
             <% end %>
           </li>
           <li class="ml-1">
             <%= link_to new_customer_session_path, class: 'nav-link text-light' do %>
-              <i class="fa-solid fa-arrow-right-to-bracket fa-lg" style="color: black"></i>
+              <i class="fa-solid fa-arrow-right-to-bracket fa-2x" style="color: black"></i>
             <% end %>
           </li>
         <% end %>
