@@ -19,7 +19,7 @@
       <tbody>
         <% @cart_items.each do |cart_item| %>
           <tr>
-            <td cclass="align-middle text-center">
+            <td class="align-middle text-center">
               <%= image_tag cart_item.item.get_image, size: "50x50" %>
               <%= cart_item.item.name %>
             </td>
