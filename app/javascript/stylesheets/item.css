@@ -19,7 +19,7 @@
 }
 
 .items_all{
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
 }
 
