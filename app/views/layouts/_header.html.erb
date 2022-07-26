@@ -4,14 +4,14 @@
       <div class="col-12">
         <div class="row">
           <div class="col-4 d-flex align-items-center">
-          <a class="navbar-brand" href="/">LOGO</a>
+          <a class="navbar-brand" href="/"><span><%= image_tag ('logo.png') %></span></a>
           <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation  bg-right">
             <span class="navbar-toggler-icon "></span>
           </button>
           </div>
 
           <div class="col-8">
-            <div class="row">
+            <div class="row mt-4">
               <div class="col collapse navbar-collapse" id="navbarNavDropdown">
                 <% if admin_signed_in? %>
                   <%= render 'layouts/admin_header' %>
@@ -21,9 +21,9 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row pt-2">
               <div class="col text-right">
-                <%= form_with do |f| %>
+                <%= form_with url: search_path, method: :get do |f| %>
                   <%= f.text_field :content %>
                   <%= f.submit '検索' %>
                 <% end %>
