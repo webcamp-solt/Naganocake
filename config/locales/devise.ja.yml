@@ -1,0 +1,41 @@
+ja:
+  activerecord:
+    attributes:
+      customer:
+        email: Eメール
+        first_name: 名
+        first_name_kana: 名(カナ)
+        last_name: 姓
+        last_name_kana: 姓(カナ)
+        zip_code: 郵便番号
+        phone_number: 電話番号
+        address: 住所
+    models:
+      customer: 顧客情報
+  devise:
+    sessions:
+      already_signed_out: 既にログアウト済みです。
+      new:
+        sign_in: ログイン
+      signed_in: ログインしました。
+      signed_out: ログアウトしました。
+    shared:
+      links:
+        back: 戻る
+        didn_t_receive_confirmation_instructions: アカウント確認のメールを受け取っていませんか？
+        didn_t_receive_unlock_instructions: アカウントのロック解除方法のメールを受け取っていませんか？
+        forgot_your_password: パスワードを忘れましたか？
+        sign_in: ログイン
+        sign_in_with_provider: "%{provider}でログイン"
+        sign_up: アカウント登録
+      minimum_password_length: "（%{count}字以上）"
+  errors:
+    messages:
+      already_confirmed: は既に登録済みです。ログインしてください。
+      confirmation_period_expired: の期限が切れました。%{period} までに確認する必要があります。 新しくリクエストしてください。
+      expired: の有効期限が切れました。新しくリクエストしてください。
+      not_found: は見つかりませんでした。
+      not_locked: はロックされていません。
+      not_saved:
+        one: エラーが発生したため %{resource} は保存されませんでした。
+        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
