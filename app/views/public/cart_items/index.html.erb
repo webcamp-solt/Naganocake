@@ -9,22 +9,22 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <td>商品名</td>
-          <td>価格(税込)</td>
-          <td>数量</td>
-          <td>小計</td>
-          <td></td>
+          <th class="text-center">商品名</th>
+          <th class="text-center">価格(税込)</th>
+          <th class="text-center">数量</th>
+          <th class="text-center">小計</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @cart_items.each do |cart_item| %>
           <tr>
-            <td class="align-middle">
+            <td cclass="align-middle text-center">
               <%= image_tag cart_item.item.get_image, size: "50x50" %>
               <%= cart_item.item.name %>
             </td>
-            <td class="align-middle"><%= cart_item.item.with_tax_price %></td>
-            <td class="align-middle">
+            <td class="align-middle text-center"><%= cart_item.item.with_tax_price %></td>
+            <td class="align-middle text-center">
               <%= form_with model: cart_item, url: cart_item_path(cart_item.id), method: :patch do |f| %>
                 <% if cart_item.quantity < 10 %>
                   <%= f.select :quantity, *[1..10], class: "inline-block", include_blank: cart_item.quantity %>
@@ -35,8 +35,8 @@
                 <%= f.submit '変更', class: "btn btn-success btn-sm" %>
               <% end %>
             </td>
-            <td class="align-middle"><%= cart_item.item.with_tax_price * cart_item.quantity %></td>
-            <td class="align-middle"><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete, class: "btn btn-danger btn-sm" %></td>
+            <td class="align-middle text-center"><%= cart_item.item.with_tax_price * cart_item.quantity %></td>
+            <td class="align-middle text-center"><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete, class: "btn btn-danger btn-sm" %></td>
           </tr>
         <% end %>
       </tbody>
