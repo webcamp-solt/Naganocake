@@ -27,7 +27,7 @@
           <p>
             会員でない方も商品の閲覧はできますが、</br>
             購入には会員登録が必要になります。</br>
-            <%= link_to "会員登録へ", about_path %>
+            <%= link_to "会員登録へ", new_customer_registration_path %>
           </p>
         </div>
       </div>
@@ -40,7 +40,7 @@
           <p>
             イギリスで数年修行した後、</br>
             出身地である長野県にnaganoCake</br>
-            をオープンしました。<%= link_to "ABOUTへ", new_customer_registration_path %>
+            をオープンしました.
           </p>
         </div>
       </div>
@@ -56,23 +56,28 @@
   </a>
 </div>
 <div class='container px-5 px-sm-0'>
-  <div class="row py-3 justify-content-center">
-    <h1>新着商品</h1>
-    <table class="table table-borderless ">
-      <tr class="d-flex d-md-block flex-wrap justify-content-center">
-        <% @items.each do |item| %>
-          <td>
-            <%= link_to item_path(item) do %>
-              <%= image_tag item.get_image, size: "200x130" %>
-              <p class="figure-caption"><%= item.name %></p>
-              <p class="figure-caption">¥<%= item.with_tax_price %></p>
-            <% end %>
-          </td>
-        <% end %>
-      </tr>
-    </table>
-    <div class="col text-right">
-      <%= link_to "全ての商品を見る>", items_path %>
+<div class='row py-5'>
+  <div class='col-md-2'>
+    <%= render 'admin/genres/index', genres: @genres %>
+  </div>
+  <div class='col-md-8 offset-md-1 '>
+    <div class="row py-3 justify-content-center">
+      <h1>新着商品</h1>
+      <table class="table table-borderless ">
+        <tr class="d-flex d-md-block flex-wrap justify-content-center">
+          <% @items.each do |item| %>
+            <td>
+              <%= link_to item_path(item) do %>
+                <%= image_tag item.get_image, size: "200x130" %>
+                <p class="figure-caption"><%= item.name %></p>
+                <p class="figure-caption">¥<%= item.with_tax_price %></p>
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+      <div class="col text-right">
+        <%= link_to "全ての商品を見る>", items_path %>
     </div>
   </div>
 </div>
