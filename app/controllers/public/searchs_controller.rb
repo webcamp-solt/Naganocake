@@ -2,23 +2,33 @@ class Public::SearchsController < ApplicationController
 
   def search
     @content = params[:content]
-    @range = params[:range]
-    @genre_search = params[:genre_search]
-    @items = Item.where("name LIKE ?", "%#{params[:content]}%")
+    @genre_id = params[:genre_id]
+    @genres = Genre.all
+    @check = params[:check]
 
-
-    # if @range == '1'
-    #   @items = Item.where("name LIKE ?", "%#{params[:content]}%")
-    #   if @genre_search != nil
-    #     @genre = Genre.find_by(id: @genre_search)
-    #     @items_s = @items.where(genre_id: @genre_search)
-    #   end
-    # else
-    #   @items = Item.all
-    #   if @genre_search != nil
-    #     @genre = Genre.find_by(id: @genre_search)
-    #     @items_s = @items.where(genre_id: @genre_search)
-    #   end
-    # end
+    if @content.present?
+      unless @genre_id.present?
+        if @check
+          redirect_to request.referer, alert: "※ジャンルを選択してください"
+        else
+          items_search_name = Item.where("name LIKE ?", "%#{params[:content]}%")
+          items_search_description = Item.where("description LIKE ?", "%#{params[:content]}%")
+          array = []
+          array = items_search_description + items_search_name
+          @items = array.uniq
+        end
+      else
+        items_search_name = Item.where("name LIKE ?", "%#{params[:content]}%")
+        items_search_description = Item.where("description LIKE ?", "%#{params[:content]}%")
+        items_name = items_search_name.where(genre_id: @genre_id)
+        items_description = items_search_description.where(genre_id: @genre_id)
+        array = []
+        array = items_name + items_description
+        @items_genre_search = array.uniq
+        @genre = Genre.find_by(id: @genre_id)
+      end
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 end

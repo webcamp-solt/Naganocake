@@ -25,8 +25,6 @@
               <div class="col text-right">
                 <%= form_with url: search_path, method: :get do |f| %>
                   <%= f.text_field :content %>
-                  <%#= f.select :range, [['商品名', '1'], ['値段', '2']] %>
-                  <%#= f.select :genre_search, options_from_collection_for_select(Genre.all, :id, :name), {include_blank: "ジャンル選択"} %>
                   <%= f.submit '検索' %>
                 <% end %>
               </div>
