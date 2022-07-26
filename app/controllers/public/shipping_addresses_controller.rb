@@ -10,7 +10,7 @@ class Public::ShippingAddressesController < ApplicationController
   def create
     @shipping_address = ShippingAddress.new(shipping_address_params)
     if @shipping_address.save
-      redirect_to shipping_addresses_path, notice: "You have updated user successfully."
+      redirect_to shipping_addresses_path, notice: "配送先の登録に成功しました"
     else
       @shipping_addresses = ShippingAddress.all
       render :index
@@ -25,7 +25,7 @@ class Public::ShippingAddressesController < ApplicationController
   def update
     @shipping_address = ShippingAddress.find(params[:id])
     if @shipping_address.update(shipping_address_params)
-      redirect_to shipping_addresses_path, notice: "You have updated user successfully."
+      redirect_to shipping_addresses_path, notice: "変更を保存しました"
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Public::ShippingAddressesController < ApplicationController
   def destroy
     @shipping_address = ShippingAddress.find(params[:id])
     @shipping_address.delete
-    redirect_to shipping_addresses_path, notice: "You have updated user successfully."
+    redirect_to shipping_addresses_path, notice: "配送先の削除に成功しました"
   end
 
 
