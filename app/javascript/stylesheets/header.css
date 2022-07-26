@@ -1,0 +1,17 @@
+.mouse {
+  position   : relative;
+}
+.mouse:hover .word {
+  display: inline;
+}
+.word {
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  width: 100px;
+  top: 33px;
+  left: -30px;
+  font-size: 18px;
+  font-weight:bold;
+  text-align: center;
+}
