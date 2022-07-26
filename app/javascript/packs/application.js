@@ -16,6 +16,7 @@ import '@fortawesome/fontawesome-free/js/all'
 
 import "../stylesheets/item.css"
 import "../stylesheets/footer.css"
+import "flash.js"
 
 Rails.start()
 Turbolinks.start()
