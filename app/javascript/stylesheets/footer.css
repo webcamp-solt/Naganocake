@@ -1,14 +1,13 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
+.footerFixed {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background: #343a40;
 }

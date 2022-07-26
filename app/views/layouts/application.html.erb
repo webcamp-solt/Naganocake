@@ -11,15 +11,17 @@
   </head>
 
   <body>
-    <haeder class="mb-5">
-      <%= render 'layouts/header' %>
-    </haeder>
-    <main>
-      <p id="notice"><%= notice %></p>
-      <%= yield %>
-    </main>
-    <footer class="mt-5">
-      <%= render 'layouts/footer' %>
-    </footer>
+    <div class="footerFixed">
+      <haeder class="mb-5">
+        <%= render 'layouts/header' %>
+      </haeder>
+      <main class="mb-5">
+        <p id="notice"><%= notice %></p>
+        <%= yield %>
+      </main>
+      <footer class="mt-5">
+        <%= render 'layouts/footer' %>
+      </footer>
+    </div>
   </body>
 </html>
