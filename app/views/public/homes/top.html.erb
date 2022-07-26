@@ -55,31 +55,30 @@
     <span class="sr-only">次の画像へ</span>
   </a>
 </div>
-<div class='container px-5 px-sm-0'>
-<div class='row py-5'>
-  <div class='col-md-2'>
-    <%= render 'admin/genres/index', genres: @genres %>
-  </div>
-  <div class='col-md-8 offset-md-1 '>
-    <div class="row py-3 justify-content-center">
-      <h1>新着商品</h1>
-      <table class="table table-borderless ">
-        <tr class="d-flex d-md-block flex-wrap justify-content-center">
-          <% @items.each do |item| %>
-            <td>
-              <%= link_to item_path(item) do %>
-                <%= image_tag item.get_image, size: "200x130" %>
-                <p class="figure-caption"><%= item.name %></p>
-                <p class="figure-caption">¥<%= item.with_tax_price %></p>
-              <% end %>
-            </td>
-          <% end %>
-        </tr>
-      </table>
-      <div class="col text-right">
-        <%= link_to "全ての商品を見る>", items_path %>
-    </div>
-  </div>
+<div class="genres py-3 ml-3">
+    <%= render 'admin/genres/genre_search', genres: @genres %>
 </div>
+<div class="row py-3 mx-3 justify-content-center">
+  <h1>新着商品</h1>
+  <table class="table table-borderless">
+    <tr class="d-flex d-block flex-wrap justify-content-center ">
+      <% @items.each do |item| %>
+        <td class="new_item_table">
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.get_image, class: "mew_item-image"  %>
+            <p class="figure-caption"><%= item.name %></p>
+            <p class="figure-caption">¥<%= item.with_tax_price %></p>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>
+<div class="col text-right">
+  <%= link_to "全ての商品を見る>", items_path %>
+</div>
+
+
+
 
 

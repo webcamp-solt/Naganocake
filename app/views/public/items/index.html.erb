@@ -1,27 +1,24 @@
-<div class='container px-5 px-sm-0'>
-  
-  <%= image_tag 'items.jpeg',  style: "width: 100%; height: 300px; object-fit:cover; " %>
-  <%= render 'admin/genres/genre_search' %>
-  
-  <div class='row py-5 mx-auto justify-content-center'>
-    <div class="col-md-10">
-      <div class="row">
-        <h1 class="col-3">商品一覧</h1>
-        <p class="col pt-3">(全<%= @all_items.count %>件)</p>
-      </div>
-
-        <div class="row items_all mx-auto">
-          <% @items.each do |item| %>
-            <div class="mr-3">
-              <%= link_to item_path(item) do %>
-                <%= image_tag item.get_image, size: "200x150" %>
-                <p class="figure-caption"><%= item.name %></p>
-                <p class="figure-caption">¥<%= item.with_tax_price %></p>
-              <% end %>
-            </div>
+<%= image_tag 'items.jpeg', class: "index-image" %>
+<div class="genres py-3 ml-3">
+  <%= render 'admin/genres/genre_search', genres: @genres %>
+</div>
+<div class="row py-3 mx-3 justify-content-center">
+  <h1>商品一覧</h1>
+  <p class="col pt-3">(全<%= @all_items.count %>件)</p>
+  <table class="table table-borderless">
+    <tr class="d-flex d-block flex-wrap justify-content-center ">
+      <% @items.each do |item| %>
+        <td class="new_item_table">
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.get_image, class: "mew_item-image"  %>
+            <p class="figure-caption"><%= item.name %></p>
+            <p class="figure-caption">¥<%= item.with_tax_price %></p>
           <% end %>
-        </div>
-      <%= paginate @items %>
-    </div>
-  </div>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>
+<div class="col text-right">
+  <%= paginate @items %>
 </div>
