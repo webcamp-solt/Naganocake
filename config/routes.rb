@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   scope module: :public do
 
+    get "search" => "searchs#search"
+
     resources :shipping_addresses, except: [:show, :new]
 
     resources :orders, only: [:new, :create, :index, :show] do
