@@ -13,10 +13,9 @@
 }
 
 .about_image {
-  width: 700px;
-  height: 400px;
+  width: 100%;
+  height: auto;
   justify-content: center;
-  background-image: url("image/top.jpeg");
   background-size: cover;
   background-position: center;
 }
