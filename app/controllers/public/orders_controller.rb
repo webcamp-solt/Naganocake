@@ -1,10 +1,10 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
-  
+
   def new
     @order = Order.new
     unless current_customer.cart_items.present?
-      redirect_to root_path, notice: "予期せぬエラーが発生しました"
+      redirect_to root_path, alert: "予期せぬエラーが発生しました"
     end
   end
 
@@ -58,7 +58,7 @@ class Public::OrdersController < ApplicationController
     end
 
     current_customer.cart_items.destroy_all
-    redirect_to complete_orders_path, notice: "You have updated user successfully."
+    redirect_to complete_orders_path, notice: "注文が完了しました"
   end
 
   def index
@@ -70,7 +70,7 @@ class Public::OrdersController < ApplicationController
     if @params
       @order = Order.find(params[:id])
     else
-      redirect_to root_path, notice: "予期せぬエラーが発生しました"
+      redirect_to root_path, alert: "予期せぬエラーが発生しました"
     end
   end
 
