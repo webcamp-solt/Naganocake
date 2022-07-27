@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   scope module: :public do
 
+    get "search" => "searchs#search"
+
     resources :shipping_addresses, except: [:show, :new]
 
     resources :orders, only: [:new, :create, :index, :show] do
@@ -43,7 +45,11 @@ Rails.application.routes.draw do
     end
 
     resources :items, only: [:index, :show]
+    
+    get 'item/search' => 'items#search'
   end
+
+  get 'customers' =>  redirect("/customers/sign_up")
 
   devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",

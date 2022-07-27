@@ -19,6 +19,7 @@ class Public::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
+    flash[:youkoso] = "ようこそ、#{ current_customer.full_name } さん！"
     customers_my_page_path
   end
 

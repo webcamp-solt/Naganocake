@@ -1,12 +1,3 @@
-
-
-.main-visual {
-  height: 300px;
-  background-image: url("image/home.jpeg");
-  background-size: cover;
-  background-position: center;
-}
-
 .main-visual-content{
   width: 60%; /* 横幅40% */
   height: 200px; /* 親の高さに揃える */
@@ -18,17 +9,10 @@
   justify-content: center;
 }
 
-.about_image {
-  width: 700px;
-  height: 400px;
-  justify-content: center;
-  background-image: url("image/top.jpeg");
-  background-size: cover;
-  background-position: center;
-}
+
 
 .items_all{
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
 }
 

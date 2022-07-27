@@ -5,6 +5,10 @@ class Item < ApplicationRecord
 
   has_one_attached :image
 
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
+
   def get_image
     if image.attached?
       image
@@ -24,6 +28,5 @@ class Item < ApplicationRecord
       '販売停止中'
     end
   end
-
 end
 

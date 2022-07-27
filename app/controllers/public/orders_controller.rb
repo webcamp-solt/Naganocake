@@ -1,6 +1,11 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!
+
   def new
     @order = Order.new
+    unless current_customer.cart_items.present?
+      redirect_to root_path, alert: "予期せぬエラーが発生しました"
+    end
   end
 
   def confirm
@@ -53,7 +58,7 @@ class Public::OrdersController < ApplicationController
     end
 
     current_customer.cart_items.destroy_all
-    redirect_to complete_orders_path
+    redirect_to complete_orders_path, notice: "注文が完了しました"
   end
 
   def index
@@ -61,7 +66,12 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @params = params[:check]
+    if @params
+      @order = Order.find(params[:id])
+    else
+      redirect_to root_path, alert: "予期せぬエラーが発生しました"
+    end
   end
 
   private

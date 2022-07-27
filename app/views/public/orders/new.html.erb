@@ -1,6 +1,7 @@
 <div class="container">
   <div class="mt-4">
     <h4 class="offset-1"><span style="background-color: beige">注文情報入力</span></h4>
+    <%= render 'layouts/errors', obj: @order %>
     <%= form_with model: @order, url: confirm_orders_path, method: :post do |f| %>
       <h5>支払方法</h5>
         <div class="ml-5">
@@ -18,11 +19,13 @@
             <%= current_customer.address %><br>
             <%= current_customer.full_name %>
           </div>
-          <%= f.radio_button :address_option, 1 %>
-          <%= f.label :address_option, "登録済住所から選択", :value => 1, class: "mb-0" %>
-          <div class="ml-4 mb-2">
-            <%= f.select :address_id, options_from_collection_for_select(current_customer.shipping_addresses.all, :id, :address_display) %>
-          </div>
+          <% if current_customer.shipping_addresses.present? %>
+            <%= f.radio_button :address_option, 1 %>
+            <%= f.label :address_option, "登録済住所から選択", :value => 1, class: "mb-0" %>
+            <div class="ml-4 mb-2">
+              <%= f.select :address_id, options_from_collection_for_select(current_customer.shipping_addresses.all, :id, :address_display) %>
+            </div>
+          <% end %>
           <%= f.radio_button :address_option, 2 %>
           <%= f.label :address_option, "新しいお届け先", :value => 2, class: "mb-0" %>
           <div class="ml-4 mb-2">
@@ -41,7 +44,7 @@
           </div>
         </div>
       <div class="text-center">
-        <%= f.submit '確認画面へ進む', class: "btn btn-primary" %>
+        <%= f.submit '確認画面へ進む', class: "btn btn-outline-primary" %>
       </div>
     <% end %>
   </div>

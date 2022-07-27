@@ -2,48 +2,73 @@
         <ul class="navbar-nav ml-auto">
           <% if customer_signed_in? %>
 
-          <p class="navbar-text text-center">ようこそ、<%= current_customer.full_name %> さん！</p>
+          <p id="youkoso" class="font-weight-bold"><%= flash[:youkoso] %></p>
 
-          <li>
-            <%= link_to customers_my_page_path,class: 'nav-link text-light' do %>
-              マイページ
-            <% end %>
+
+          <li class="mx-1">
+            <div class="mouse">
+              <%= link_to customers_my_page_path,class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-user fa-2x d-none d-sm-inline" style="color: black" ></i>
+                <span class="word">My-Page</span>
+              <% end %>
+            </div>
           </li>
-          <li>
-            <%=  link_to items_path, class: 'nav-link text-light' do %>
-             商品一覧
-            <% end %>
+          <li class="mx-1">
+            <div class="mouse">
+              <%=  link_to items_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-cheese fa-2x d-none d-sm-inline" style="color: black"></i>
+                <span class="word ml-1">Item-List</span>
+              <% end %>
+            </div>
           </li>
-          <li>
-            <%=  link_to cart_items_path, class: 'nav-link text-light' do %>
-             カート
-            <% end %>
+          <li class="mx-1">
+            <div class="mouse">
+              <%=  link_to cart_items_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-cart-shopping fa-2x d-none d-sm-inline" style="color: black"></i>
+                <span class="word ml-2">Cart</span>
+              <% end %>
+            </div>
           </li>
-          <li>
-            <%= link_to destroy_customer_session_path, method: :delete,class: 'nav-link text-light' do %>
-              ログアウト
-            <% end %>
+          <li class="mx-2 sm-ml-2">
+            <div class="mouse">
+              <%= link_to destroy_customer_session_path, method: :delete, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-right-from-bracket fa-2x d-none d-sm-inline" style="color: black"></i>
+                <span class="word ml-1">Log-Out</span>
+              <% end %>
+            </div>
           </li>
         <% else %>
-          <li>
-            <%= link_to about_path,class: 'nav-link text-light' do %>
-              About
-            <% end %>
+          <li class="mx-2">
+            <div class="mouse">
+              <%= link_to about_path,class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-store fa-2x d-none d-sm-inline" style="color: black"></i>
+                <span class="word ml-1 ">About</span>
+              <% end %>
+            </div>
           </li>
-          <li>
-            <%= link_to items_path, class: 'nav-link text-light' do %>
-              商品一覧
-            <% end %>
+          <li class="mx-2">
+            <div class="mouse">
+              <%= link_to items_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-cheese fa-2x d-none d-sm-inline" style="color: black"></i>
+                <span class="word ml-1">Item-List</span>
+              <% end %>
+            </div>
           </li>
-          <li>
-            <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
-              新規登録
-            <% end %>
+          <li class="mx-2">
+            <div class="mouse">
+              <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-user-plus fa-2x d-none d-sm-inline" style="color: black"></i>
+                <span class="word ml-1">Sign-Up</span>
+              <% end %>
+            </div>
           </li>
-          <li>
-            <%= link_to new_customer_session_path, class: 'nav-link text-light' do %>
-              ログイン
-            <% end %>
+          <li class="mx-2 sm-ml-2">
+            <div class="mouse">
+              <%= link_to new_customer_session_path, class: 'nav-link text-light' do %>
+                <i class="fa-solid fa-arrow-right-to-bracket fa-2x d-none d-sm-inline" style="color: black"></i>
+                <span class="word ml-1">Log-In</span>
+              <% end %>
+            </div>
           </li>
         <% end %>
         </ul>

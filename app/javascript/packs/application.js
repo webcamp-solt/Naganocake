@@ -13,10 +13,11 @@ import "popper.js";
 import "bootstrap";
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
-// import '../stylesheets/order.css'
 
-// import "../stylesheets/item.css"
+import "../stylesheets/item.css"
 import "../stylesheets/footer.css"
+import "flash.js"
+import "../stylesheets/header.css"
 
 Rails.start()
 Turbolinks.start()
