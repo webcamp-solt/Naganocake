@@ -6,7 +6,7 @@
       <%= f.hidden_field :check, :value => true %>
       <p id="select_alert" class="text-danger font-weight-bold"><%= flash[:select_alert] %></p>
       <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), {include_blank: "ジャンル選択"}, { class: "col-4 text-center mb-2"} %><br>
-      <%= f.submit 'しぼりこむ', class: "btn btn-primary" %>
+      <%= f.submit 'しぼりこむ', class: "btn btn-outline-primary" %>
     <% end %>
   </div>
 </div>

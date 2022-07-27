@@ -18,9 +18,9 @@
             <p id="select_alert" class="text-danger font-weight-bold"><%= flash[:select_alert] %></p>
             <%= f.select :quantity, *[1..10], include_blank: "個数選択" %>
             <% if @item.sale_status %>
-              <%= f.submit "カートに入れる", class: "btn btn-success" %>
+              <%= f.submit "カートに入れる", class: "btn btn-outline-success" %>
             <% else %>
-              <p class="btn btn-danger">売　切</p>
+              <p class="btn btn-outline-danger">売　切</p>
             <% end %>
           <% else %>
             <p class="text-center">

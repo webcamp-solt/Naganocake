@@ -26,7 +26,7 @@ class Admin::GenresController < ApplicationController
       redirect_to admin_genres_path(@genres), notice: "You have updated user successfully."
     else
       render :edit
-     end
+    end
   end
 
   def show
