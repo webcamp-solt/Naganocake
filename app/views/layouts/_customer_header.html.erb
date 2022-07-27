@@ -2,7 +2,7 @@
         <ul class="navbar-nav ml-auto">
           <% if customer_signed_in? %>
 
-          <p class="navbar-text text-center">ようこそ、<%= current_customer.full_name %> さん！</p>
+          <p id="youkoso" class="font-weight-bold"><%= flash[:youkoso] %></p>
 
 
           <li class="mx-1">
