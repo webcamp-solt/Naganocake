@@ -2,11 +2,10 @@
   <div class="row mt-5">
     <h4 class="col-lg-3 bg-light mb-5 text-center">ログイン</h4>
   </div>
-    <div class="row">
-      <div class="col-lg-1"></div>
-      <h5 class="col-lg-5 bg-light mb-5 text-center">会員の方はこちらからログイン</h5>
-    </div>
-  <%= render "public/shared/error_messages", resource: resource %>
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <h5 class="col-lg-5 bg-light mb-5 text-center">会員の方はこちらからログイン</h5>
+  </div>
   <%= form_with model: @customer, url: customer_session_path do |f| %>
     <div class="form-group">
       <div class="row text-center">

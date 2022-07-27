@@ -40,7 +40,7 @@
           <p>
             イギリスで数年修行した後、</br>
             出身地である長野県にnaganoCake</br>
-            をオープンしました.
+            をオープンしました。<%= link_to "ABOUTへ", about_path %>
           </p>
         </div>
       </div>
@@ -63,9 +63,9 @@
   <table class="table table-borderless">
     <tr class="d-flex d-block flex-wrap justify-content-center ">
       <% @items.each do |item| %>
-        <td class="new_item_table">
+       <td class="new_item_table">
           <%= link_to item_path(item) do %>
-            <%= image_tag item.get_image, class: "mew_item-image"  %>
+            <%= image_tag item.get_image, class: "new_item_image"  %>
             <p class="figure-caption"><%= item.name %></p>
             <p class="figure-caption">¥<%= item.with_tax_price %></p>
           <% end %>

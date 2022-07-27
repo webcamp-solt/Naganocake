@@ -59,9 +59,17 @@
  width: 25%;
 }
 
-.mew_item-image{
+.new_item_image{
  width: 100%;
  height: 80%;
+}
+
+.about_image {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
 @media screen and (max-width:960px) {
@@ -98,3 +106,4 @@
  }
 
 }
+

@@ -60,3 +60,4 @@ gem "refile-mini_magick"
 gem 'annotate'
 gem 'kaminari'
 gem 'enum_help'
+gem 'rails-i18n'
