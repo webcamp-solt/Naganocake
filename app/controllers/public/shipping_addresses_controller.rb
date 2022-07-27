@@ -37,7 +37,6 @@ class Public::ShippingAddressesController < ApplicationController
     redirect_to shipping_addresses_path, notice: "配送先の削除に成功しました"
   end
 
-
   private
 
   def shipping_address_params
