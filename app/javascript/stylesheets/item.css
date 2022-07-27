@@ -9,14 +9,7 @@
   justify-content: center;
 }
 
-.about_image {
-  width: 700px;
-  height: 400px;
-  justify-content: center;
-  background-image: url("image/top.jpeg");
-  background-size: cover;
-  background-position: center;
-}
+
 
 .items_all{
   display: flex;
