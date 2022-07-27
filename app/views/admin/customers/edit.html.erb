@@ -1,8 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xl-1"></div>
-    <h4 class="col-lg-4 bg-light text-center"><%= @customer.full_name %>さんの会員情報編集</h4>
-  </div>
+<div class="container col-12">
+  <h1 class="bg-light text-center"><%= @customer.full_name %>さんの会員情報編集</h1>
   <%= render "public/shared/error_messages", resource: @customer %>
   <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>
     <div class="form-group">
@@ -63,7 +60,7 @@
     <div class="form-group">
       <div class="row offset-md-1">
         <div class="col-lg-2"></div>
-        <div class="col-lg-3 text-center"><%= f.submit "変更を保存", style: 'width:150px', class: "btn btn-success" %></div>
+        <div class="col-lg-3 text-center"><%= f.submit "変更を保存", style: 'width:150px', class: "btn btn-outline-success" %></div>
       </div>
     </div>
   <% end %>

@@ -1,7 +1,7 @@
 <div class="container col-12">
   <h1 class="text-center bg-light mx-auto">ジャンル編集</h1>
   <div class="text-center mt-5 mb-5">
-    <%= render 'layouts/errors', obj: @genre %>
+    <%= render "public/shared/error_messages", resource: @genre %>
     <%= form_with model: @genre, url: admin_genre_path, method: :patch do |f| %>
       <div class="form-check-inline">
         <%= f.label :"ジャンル名" %>
@@ -10,7 +10,7 @@
         <%= f.text_field :name, class: 'form-control genre_name' %>
       </div>
       <div class="form-check-inline">
-        <%= f.submit "変更を保存", class: 'btn btn-success' %>
+        <%= f.submit "変更を保存", class: 'btn btn-outline-success' %>
       </div>
     <% end %>
   </div>
