@@ -1,6 +1,6 @@
-<div class="containe col-12r">
+<div class="container col-12">
   <h1 class="text-center bg-light">商品編集</h1>
-  <%= render 'layouts/errors', obj: @item %>
+  <%= render "public/shared/error_messages", resource: @item %>
   <div class="row mt-5 g-3 d-flex justify-content-center">
     <%= form_with class: "col-md-8", model: @item, url: admin_item_path, method: :patch do |f| %>
 
