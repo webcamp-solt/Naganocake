@@ -2,7 +2,7 @@
   <h1 class="p-2">
     商品新規登録
   </h1>
-  <%= render 'layouts/errors', obj: @item %>
+  <%= render "public/shared/error_messages", resource: @item %>
   <div class="row g-3 d-flex justify-content-center">
     <%= form_with class: "col-md-8", model: @item, url: admin_items_path, method: :post do |f| %>
 
