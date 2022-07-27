@@ -7,3 +7,7 @@ $(function(){
 $(function(){
   $('#alert').fadeOut(6000);
 });
+
+$(function(){
+  $('#youkoso').fadeOut(30000);
+});
