@@ -4,8 +4,8 @@
 </div>
 
 <div class="row py-3 mx-3 justify-content-center">
-  <h1><%= @genre.name %>一覧</h1>
-    <p class="col pt-3">(全<%= @all_items.count %>件) </p>
+  <h3><%= @genre.name %>一覧</h3>
+    <p class="col p-2">(全<%= @all_items.count %>件) </p>
     <table class="table table-borderless">
     <tr class="d-flex d-block flex-wrap justify-content-center ">
       <% @genre.items.each do |item| %>
