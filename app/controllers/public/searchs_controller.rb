@@ -9,7 +9,7 @@ class Public::SearchsController < ApplicationController
     if @content.present?
       unless @genre_id.present?
         if @check
-          flash[:yusuke] = "※ジャンルを選択してください"
+          flash[:select_alert] = "※ジャンルを選択してください"
           redirect_to request.referer
         else
           items_search_name = Item.where("name LIKE ?", "%#{params[:content]}%")
