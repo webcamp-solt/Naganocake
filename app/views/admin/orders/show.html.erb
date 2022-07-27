@@ -1,24 +1,24 @@
-<div class="container">
-  <div class="mt-4">
-    <h4 class="offset-1 mb-4"><span style="background-color: beige">注文履歴一覧</span></h4>
-    <table class="table table-borderless row">
+<div class="container col-12">
+  <h1 class="text-center bg-light">注文履歴詳細</h1>
+  <div class="mt-5">
+    <table class="table table-borderless offset-1">
       <tr>
-        <th class="col-4">購入者</th>
+        <th class="col-2 pl-4">購入者</th>
         <td><%= @order.customer.full_name %></td>
       </tr>
       <tr>
-        <th class="col-4">注文日</th>
+        <th class="col-2 pl-4">注文日</th>
         <td><%= @order.created_at.to_s(:datetime_jp) %></td>
       </tr>
       <tr>
-        <th class="col-4">配送先</th>
+        <th class="col-2 pl-4">配送先</th>
         <td>
           〒<%= @order.zip_code %> <%= @order.address %><br>
           <%= @order.name %>
         </td>
       </tr>
       <tr>
-        <th class="col-4">注文ステータス</th>
+        <th class="col-2 pl-4">注文ステータス</th>
         <td>
           <%= form_with model: @order, url: admin_orders_path(@order), method: :patch do |f| %>
             <%= f.select :order_status, Order.order_statuses_i18n.invert %>
@@ -28,7 +28,7 @@
       </tr>
     </table>
 
-    <div class="row">
+    <div class="row offset-1">
       <div class="col-9">
         <table class="table mt-4">
           <thead class="table-light">

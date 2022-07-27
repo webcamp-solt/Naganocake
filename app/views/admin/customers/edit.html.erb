@@ -1,8 +1,5 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xl-1"></div>
-    <h4 class="col-lg-4 bg-light text-center"><%= @customer.full_name %>さんの会員情報編集</h4>
-  </div>
+<div class="container col-12">
+  <h1 class="bg-light text-center"><%= @customer.full_name %>さんの会員情報編集</h1>
   <%= render "public/shared/error_messages", resource: @customer %>
   <%= form_with model: @customer, url: admin_customer_path, method: :patch do |f| %>
     <div class="form-group">

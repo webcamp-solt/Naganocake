@@ -1,17 +1,12 @@
-<div class='container px-5 px-sm-0'>
+<div class='container col-12 px-5 px-sm-0'>
+  <h1 class="text-center bg-light">商品詳細</h1>
 
-  <div class='row'>
-    <div class="col">
-      <h1>商品詳細</h1>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row mt-5">
+    <div class="col-md-4 offset-2">
         <%= image_tag @item.get_image, size: "300x200" %>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-6">
       <div class="row">
         <div class="col-md-3">
           <%= "商品名" %>
@@ -54,14 +49,14 @@
         </div>
         <div class="h4 col-md-5" >
           <%if @item.sale_status == true %>
-            <%= "販売中" %>
+             <b class="text-success">販売中</b>
           <% else %>
-            <%= "販売停止中" %>
+            <b class="text-black-50">販売停止中</b>
           <% end %>
         </div>
       </div>
 
-        <div class="row">
+        <div class="row mt-3">
           <%= form_with class: "col-md-8", model: @item, url: edit_admin_item_path, method: :get do |f| %>
           <div class="row mb-3 justify-content-center">
             <%= f.submit "編集する", class: "col-md-4 btn btn-outline-success btn-lg" %>
