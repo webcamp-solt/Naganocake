@@ -35,7 +35,6 @@ class Public::ShippingAddressesController < ApplicationController
     redirect_to shipping_addresses_path, notice: "You have updated user successfully."
   end
 
-
   private
 
   def shipping_address_params
