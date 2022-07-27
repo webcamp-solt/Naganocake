@@ -19,7 +19,7 @@
           <span class="col-4"></span>
           <span class="col-2 pl-0">
             <%= f.hidden_field :customer_id, :value => current_customer.id %>
-            <%= f.submit "新規登録", class: 'btn btn-success btn-block' %>
+            <%= f.submit "新規登録", class: 'btn btn-outline-success btn-block' %>
           </span>
         </div>
       <% end %>
@@ -43,8 +43,8 @@
               <td class="py-3 px-1 border-dark"><%= shipping_address.address %></td>
               <td class="py-3 px-1 border-dark"><%= shipping_address.name %></td>
               <td class="py-3 text-center border-dark">
-               <%= link_to '編集する', edit_shipping_address_path(shipping_address), class: "btn btn-sm btn-success " %>
-               <%= link_to '削除する', shipping_address_path(shipping_address), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger " %>
+               <%= link_to '編集する', edit_shipping_address_path(shipping_address), class: "btn btn-sm btn-outline-success " %>
+               <%= link_to '削除する', shipping_address_path(shipping_address), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-outline-danger " %>
               </td>
             </tr>
           <% end %>
