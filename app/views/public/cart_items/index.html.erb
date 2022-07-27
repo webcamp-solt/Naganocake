@@ -3,7 +3,7 @@
     <div class="row mb-3">
       <h3>ショッピングカート</h3>
       <div class="col text-right">
-        <%= link_to "カートを空にする", destroy_all_cart_items_path, class: 'btn btn-danger', method: :delete %>
+        <%= link_to "カートを空にする", destroy_all_cart_items_path, class: 'btn btn-outline-danger', method: :delete %>
       </div>
     </div>
     <table class="table table-bordered">
@@ -32,7 +32,7 @@
                   <%= f.text_field :quantity, class: "form-control-sm", include_blank: cart_item.quantity, type: "number" %>
                 <% end %>
                 <%= f.hidden_field :item_id, :value => cart_item.item.id %>
-                <%= f.submit '変更', class: "btn btn-success btn-outline-sm" %>
+                <%= f.submit '変更', class: "btn btn-outline-success btn-sm" %>
               <% end %>
             </td>
             <td class="align-middle text-center"><%= cart_item.item.with_tax_price * cart_item.quantity %></td>
