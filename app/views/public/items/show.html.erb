@@ -1,15 +1,12 @@
 <div class='container px-5 px-sm-0'>
+  <%= render 'admin/genres/genre_search', genres: @genres %>
   <div class='row py-5'>
 
-    <div class='col-md-2'>
-      <%= render 'admin/genres/genre_search', genres: @genres %>
-    </div>
-
-    <div class="col-md-4">
+    <div class="col-lg-4 offset-lg-1 text-center">
       <%= image_tag @item.get_image, size: "340x220" %>
     </div>
-    <div class="col-md-6">
-      <p class="h3 font-weight-bold"><%= @item.name %></p>
+    <div class="col-lg-5 offset-lg-1 text-center">
+      <p class="h3 font-weight-bold mt-3"><%= @item.name %></p>
       <p><%= @item.description %></p>
       <p class="col pt-5">
         <span class="h3 font-weight-bold">¥<%= @item.with_tax_price %></span>(税込)
