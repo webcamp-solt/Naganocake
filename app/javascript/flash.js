@@ -9,5 +9,5 @@ $(function(){
 });
 
 $(function(){
-  $('#youkoso').fadeOut(30000);
+  $('#youkoso').fadeOut(15000);
 });
