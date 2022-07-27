@@ -14,7 +14,7 @@ class Public::CartItemsController < ApplicationController
       redirect_to request.referer, alert: "正しい数字を入力してください"
     end
     if @cart_item.quantity == 0
-      @cart_item.delete
+      @cart_item.destroy
     end
   end
 
@@ -45,7 +45,7 @@ class Public::CartItemsController < ApplicationController
       @cart_item.save
       redirect_to cart_items_path
     else
-       flash[:yusuke] = "※商品の個数を選択してください"
+      flash[:select_alert] = "※商品の個数を選択してください"
       redirect_to item_path(@cart_item.item)
     end
   end
