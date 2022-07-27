@@ -22,7 +22,7 @@
         <td>
           <%= form_with model: @order, url: admin_orders_path(@order), method: :patch do |f| %>
             <%= f.select :order_status, Order.order_statuses_i18n.invert %>
-            <%= f.submit '更新', class: "btn btn-success btn-sm" %>
+            <%= f.submit '更新', class: "btn btn-outline-success btn-sm" %>
           <% end %>
         </td>
       </tr>
@@ -48,7 +48,7 @@
                 <td>
                   <%= form_with model: ordered_item, url: admin_path(ordered_item.id), method: :patch do |f| %>
                     <%= f.select :production_status, OrderedItem.production_statuses_i18n.invert %>
-                    <%= f.submit '変更', class: "btn btn-success btn-sm" %>
+                    <%= f.submit '変更', class: "btn btn-outline-success btn-sm" %>
                   <% end %>
                 </td>
               </tr>
@@ -74,7 +74,7 @@
       </div>
     </div>
     <div class="text-center mt-5">
-      <%= link_to "注文履歴一覧に戻る", admin_login_path, class: "btn btn-primary" %>
+      <%= link_to "注文履歴一覧に戻る", admin_login_path, class: "btn btn-outline-primary" %>
     </div>
   </div>
 </div>
