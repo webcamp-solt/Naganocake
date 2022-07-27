@@ -49,6 +49,8 @@ Rails.application.routes.draw do
     get 'item/search' => 'items#search'
   end
 
+  get 'customers' =>  redirect("/customers/sign_up")
+
   devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",
   sessions: 'public/sessions'
