@@ -9,9 +9,13 @@
   display: none;
   border-radius: 5px;
   width: 100px;
-  top: 33px;
+  top: 35px;
   left: -30px;
   font-size: 18px;
   font-weight:bold;
   text-align: center;
+}
+
+.search-box {
+  border-radius: 20px;
 }

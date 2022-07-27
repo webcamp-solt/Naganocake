@@ -4,7 +4,7 @@
     <%= form_with url: search_path, method: :get do |f| %>
       <%= f.hidden_field :content, :value => @content %>
       <%= f.hidden_field :check, :value => true %>
-      <p id="yusuke" class="text-danger font-weight-bold"><%= flash[:yusuke] %></p>
+      <p id="select_alert" class="text-danger font-weight-bold"><%= flash[:select_alert] %></p>
       <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), {include_blank: "ジャンル選択"}, { class: "col-4 text-center mb-2"} %><br>
       <%= f.submit 'しぼりこむ', class: "btn btn-primary" %>
     <% end %>
