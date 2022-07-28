@@ -34,11 +34,9 @@ DMM WEBCMPチーム開発で作成
 - JavaScript	
 
 ### 📝設計
-- [ER図](https://mermaidjs.github.io/)
-- [テーブル定義書](https://docs.google.com/spreadsheets/d/1FZpi7q2XzhLZeElM9MddR-GQBc7SCpNlnZT4tX8KYhY/edit?usp=sharing)
-- [アプリケーション詳細設計](https://mermaidjs.github.io/)
-- [管理者側ワイヤーフレーム](https://mermaidjs.github.io/)
-- [会員側ワイヤーフレーム](https://mermaidjs.github.io/)
+- [ER図](https://app.diagrams.net/#G1AVr54ACykak8ly5mLGsgcINFgOHP7pNp)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/12Y2MhmlQjXz6Nhp2i6xPlS_G4e5RiH1kqsbDLegmMak/edit#gid=549108681)
+- [アプリケーション詳細設計](https://docs.google.com/spreadsheets/d/12Y2MhmlQjXz6Nhp2i6xPlS_G4e5RiH1kqsbDLegmMak/edit#gid=549108681)
 
 # 👨‍👩‍👦‍👦開発メンバー
 - ますみん
