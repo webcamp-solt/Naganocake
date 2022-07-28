@@ -35,7 +35,7 @@ DMM WEBCMPチーム開発で作成
 
 ### 📝設計
 - [ER図](https://mermaidjs.github.io/)
-- [テーブル定義書](https://mermaidjs.github.io/)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1FZpi7q2XzhLZeElM9MddR-GQBc7SCpNlnZT4tX8KYhY/edit?usp=sharing)
 - [アプリケーション詳細設計](https://mermaidjs.github.io/)
 - [管理者側ワイヤーフレーム](https://mermaidjs.github.io/)
 - [会員側ワイヤーフレーム](https://mermaidjs.github.io/)
