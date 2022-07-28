@@ -1,0 +1,48 @@
+.main-visual-content{
+  width: 60%; /* 横幅40% */
+  height: 200px; /* 親の高さに揃える */
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center; /* 文字を中央揃えにする */
+}
+
+.pagination {
+  justify-content: center;
+}
+
+
+
+.items_all{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.figure-caption{
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.item-form {
+  position: relative;
+}
+
+.soled-out {
+  position: absolute;
+  border-radius: 50%;
+  writing-mode: vertical-rl;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 215px;
+  border-width: 2px;
+}
+
+.soled-text {
+  margin: 8px 14px 8px 18px;
+  font-weight:bold;
+  transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+}

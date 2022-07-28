@@ -2,15 +2,33 @@
 <html>
   <head>
     <title>Naganocake</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="footerFixed">
+      <haeder class="mb-5">
+        <%= render 'layouts/header' %>
+      </haeder>
+      <main class="mb-5">
+        <div class="container no-slide text-center">
+          <div class="row">
+            <div class="col-12">
+              <p id="alert", class="text-center mx-auto"><%= alert %></p>
+              <p id="notice", class="text-ceter mx-auto"><%= notice %></p>
+            </div>
+          </div>
+        </div>
+        <%= yield %>
+      </main>
+      <footer class="mt-5">
+        <%= render 'layouts/footer' %>
+      </footer>
+    </div>
   </body>
 </html>

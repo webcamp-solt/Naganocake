@@ -1,0 +1,79 @@
+
+        <ul class="navbar-nav ml-auto">
+          <% if admin_signed_in? %>
+
+          <li class="mx-1">
+            <div class="mouse">
+              <%=  link_to admin_items_path, class: 'nav-link' do %>
+                <i class="fa-solid fa-cheese fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-1">Item-List</span>
+            </div>
+          </li>
+          <li class="mx-1">
+            <div class="mouse">
+              <%=  link_to admin_customers_path, class: 'nav-link' do %>
+                <i class="fa-solid fa-users fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-2">User-List</span>
+            </div>
+          </li>
+          <li class="mx-1">
+            <div class="mouse">
+              <%=  link_to admin_login_path, class: 'nav-link' do %>
+                <i class="fa-solid fa-clock-rotate-left fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-2">Order</span>
+            </div>
+          </li>
+          <li class="mx-1">
+            <div class="mouse">
+              <%= link_to admin_genres_path, class: 'nav-link' do %>
+                <i class="fa-solid fa-tags fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-2">Genre-List</span>
+            </div>
+          </li>
+          <li class="ml-1">
+            <div class="mouse">
+              <%= link_to destroy_admin_session_path, method: :delete,class: 'nav-link' do %>
+                <i class="fa-solid fa-right-from-bracket fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-1">Log-Out</span>
+            </div>
+          </li>
+        <% else %>
+          <li class="mx-1">
+            <div class="mouse">
+              <%= link_to about_path,class: 'nav-link' do %>
+                <i class="fa-solid fa-store fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word">About</span>
+            </div>
+          </li>
+          <li class="mx-1">
+            <div class="mouse">
+              <%= link_to items_path, class: 'nav-link' do %>
+                <i class="fa-solid fa-users fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word">Item-List</span>
+            </div>
+          </li>
+          <li class="mx-1">
+            <div class="mouse">
+              <%= link_to new_customer_registration_path, class: 'nav-link' do %>
+                <i class="fa-solid fa-user-plus fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word">Sign_Up</span>
+            </div>
+          </li>
+          <li class="ml-1">
+            <div class="mouse">
+              <%= link_to new_customer_session_path, class: 'nav-link' do %>
+                <i class="fa-solid fa-arrow-right-to-bracket fa-2x" style="color: black"></i>
+              <% end %>
+              <span class="word ml-3">Log-In</span>
+            </div>
+          </li>
+        <% end %>
+        </ul>

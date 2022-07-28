@@ -1,0 +1,22 @@
+<%= image_tag 'items.jpeg',  style: "width: 100%; height: 300px; object-fit:cover; " %>
+<div class="genres py-3 ml-3">
+  <%= render 'admin/genres/genre_search' %>
+</div>
+
+<div class="row py-3 mx-3 justify-content-center">
+  <h3><%= @genre.name %>一覧</h3>
+    <p class="col p-2">(全<%= @all_items.count %>件) </p>
+    <table class="table table-borderless">
+    <tr class="d-flex d-block flex-wrap justify-content-center ">
+      <% @genre.items.each do |item| %>
+        <td class="new_item_table">
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.get_image, class: "new_item_image"  %>
+            <p class="figure-caption"><%= item.name %></p>
+            <p class="figure-caption">¥<%= item.with_tax_price %></p>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  </table>
+</div>
