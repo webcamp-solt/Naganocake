@@ -6,17 +6,23 @@
 }
 
 #notice {
-  background-color: #a6ce39;
-  border-radius: 40px;
+ background-color: #a6ce39;
+ border-radius: 40px;
+ width: 50%;
 }
 
 #alert {
-  background-color: #f9e900;
-  border-radius: 40px;
+ background-color: #f9e900;
+ border-radius: 40px;
+ width: 50%;
+}
+
+.no-slide {
+ height: 50px;
 }
 
 .btn {
-  border-radius: 50px;
+ border-radius: 50px;
 }
 
 .carousel-caption {
