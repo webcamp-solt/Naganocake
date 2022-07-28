@@ -9,7 +9,7 @@ class Admin::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to admin_genres_path, notice: "You have updated user successfully."
+      redirect_to admin_genres_path, notice: "ジャンルの登録に成功しました"
     else
       @genres = Genre.page(params[:page])
       render :index
@@ -23,7 +23,7 @@ class Admin::GenresController < ApplicationController
   def update
    @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
-      redirect_to admin_genres_path(@genres), notice: "You have updated user successfully."
+      redirect_to admin_genres_path(@genres), notice: "ジャンルの変更を保存しました"
     else
       render :edit
     end
