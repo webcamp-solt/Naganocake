@@ -25,7 +25,7 @@ class Public::CustomersController < ApplicationController
   def out
     @customer = Customer.find(current_customer.id)
     @customer.update(customer_params)
-    reset_session
+    session[:current_customer] = nil
     redirect_to root_path
   end
 
