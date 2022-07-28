@@ -45,7 +45,7 @@ Rails.application.routes.draw do
     end
 
     resources :items, only: [:index, :show]
-    
+
     get 'item/search' => 'items#search'
   end
 

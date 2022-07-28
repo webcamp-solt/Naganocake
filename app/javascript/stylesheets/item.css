@@ -22,3 +22,27 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.item-form {
+  position: relative;
+}
+
+.soled-out {
+  position: absolute;
+  border-radius: 50%;
+  writing-mode: vertical-rl;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 215px;
+  border-width: 2px;
+}
+
+.soled-text {
+  margin: 8px 14px 8px 18px;
+  font-weight:bold;
+  transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+}
